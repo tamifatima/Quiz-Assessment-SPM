@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "QuizAI";
+  src: url("../assets/fonts/TEXT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "QuizAI";
+  src: url("../assets/fonts/SEMIBOLD.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "QuizAI";
+  src: url("../assets/fonts/BOLD.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "QuizAI", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-[#f3f4f6] text-[#1f2937] antialiased;
+    font-family: var(--font-sans);
+    transition: background-color 220ms ease, color 220ms ease;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html.dark body {
+    background: #05080e;
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .app-surface {
+    position: relative;
+    overflow: hidden;
+    background: #f4f5f8;
+  }
+
+  .app-surface::before,
+  .app-surface::after {
+    content: '';
+    position: absolute;
+    width: 42vw;
+    height: 42vw;
+    min-width: 280px;
+    min-height: 280px;
+    border-radius: 9999px;
+    pointer-events: none;
+    filter: blur(120px);
+    z-index: 0;
+  }
+
+  .app-surface::before {
+    top: -16%;
+    right: -14%;
+    background: rgba(252, 211, 77, 0.42);
+  }
+
+  .app-surface::after {
+    bottom: -16%;
+    left: -14%;
+    background: rgba(148, 163, 184, 0.34);
+  }
+
+  .app-surface > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .glass-card {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-black/5 rounded-full hover:bg-black/10 transition-colors;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.spectra-fallback-gradient {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(56, 189, 248, 0.28), transparent 58%),
+    radial-gradient(ellipse at 80% 30%, rgba(99, 102, 241, 0.24), transparent 54%),
+    radial-gradient(ellipse at 60% 75%, rgba(16, 185, 129, 0.22), transparent 55%),
+    linear-gradient(160deg, rgba(10, 14, 26, 0.9), rgba(5, 9, 18, 0.92));
+  filter: saturate(1.12);
+}
+
+.spectra-fallback-noise {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.085) 0.8px, transparent 0.8px),
+    radial-gradient(rgba(255, 255, 255, 0.06) 0.65px, transparent 0.65px);
+  background-size: 3px 3px, 4px 4px;
+  background-position: 0 0, 1px 1px;
+  mix-blend-mode: soft-light;
+  opacity: 0.35;
+  animation: spectra-noise-float 7s linear infinite;
+}
+
+@keyframes spectra-noise-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+}
