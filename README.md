@@ -1,3 +1,43 @@
+AI Online Quiz & Assessment System
+
+An AI-powered online quiz and assessment platform that automates quiz generation, evaluation, and student feedback through intelligent question generation using Google Gemini AI. The platform provides teacher and student role-based workflows, allowing educators to generate quizzes from topic content and students to receive instant results and explanations.
+
+Developed as a Software Project Management (SPM) Final Project at the University of the Punjab.
+
+My Role — Project Manager & Developer
+
+I contributed to this project as both a Project Manager (SPM 1) and Development Team Member.
+
+Project Management Responsibilities
+Project planning and coordination
+Sprint execution and progress monitoring
+Risk management and mitigation planning
+Timeline tracking and milestone management
+Team coordination and workload balancing
+Development Contributions
+Contributed to system development and implementation
+Assisted in feature integration and platform functionality
+Supported AI-powered assessment workflows
+Collaborated on overall system architecture and execution
+Core Features
+AI-powered quiz generation
+Role-based authentication
+Quiz creation and management
+Instant grading and evaluation
+Student feedback with explanations
+Cloud deployment on Vercel
+Tech Stack
+
+Frontend: React, TypeScript, Tailwind CSS
+Backend: Supabase, PostgreSQL
+AI: Google Gemini 1.5 Flash
+Deployment: Vercel
+
+Outcome
+
+Successfully completed and deployed within a 3.5-week academic sprint, meeting all project objectives and deliverables
+
+
 # MassCom (Supabase Migration)
 
 This app now uses Supabase for:
